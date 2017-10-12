@@ -158,6 +158,29 @@ namespace RealEstateSystem.Helpers
                             }
                         }
 
+                        HtmlNode info = htmlDoc.DocumentNode.SelectSingleNode("/html/body/div[3]/div/div[3]/div[2]/div[2]/div[2]/div/div[4]/text()");
+                        if (info != null)
+                        {
+                            offer.Info = info.InnerText;
+                        }
+
+                        HtmlNode person = htmlDoc.DocumentNode.SelectSingleNode("/html/body/div[3]/div/div[3]/div[2]/div[2]/div[2]/div/div[6]/div[1]/text()");
+                        if (person != null)
+                        {
+                            offer.Person = person.InnerText;
+                        }
+
+                        HtmlNode location = htmlDoc.DocumentNode.SelectSingleNode("/html/body/div[3]/div/div[3]/div[2]/div[2]/div[2]/div/div[6]/div[2]/text()");
+                        if (location != null)
+                        {
+                            offer.Location = location.InnerText;
+                        }
+
+                        HtmlNode phone = htmlDoc.DocumentNode.SelectSingleNode("/html/body/div[3]/div/div[3]/div[2]/div[2]/div[2]/div/div[6]/div[3]/text()");
+                        if (phone != null)
+                        {
+                            offer.Phone = phone.InnerText;
+                        }
                         offers.Add(offer);
                     }
 
